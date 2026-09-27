@@ -1,3 +1,4 @@
-/example
+/jev
 /dist/
 *.tar.gz
+/.worktrees/

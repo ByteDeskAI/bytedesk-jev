@@ -1,14 +1,14 @@
-module github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-template
+module github.com/ByteDeskAI/bytedesk-jev
 
 go 1.25.0
 
 require (
-	github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.2
-	github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.3
+	github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.15
+	github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.17
 )
 
 require (
-	github.com/ByteDeskAI/bytedesk-sdk-dependencies v0.4.0-rc.17 // indirect
+	github.com/ByteDeskAI/bytedesk-sdk-dependencies v0.4.0-rc.21 // indirect
 	github.com/Masterminds/semver/v3 v3.5.0 // indirect
 	github.com/klauspost/compress v1.18.0 // indirect
 	github.com/nats-io/nats.go v1.48.0 // indirect
