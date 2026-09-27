@@ -3,8 +3,8 @@ module github.com/ByteDeskAI/bytedesk-jev
 go 1.25.0
 
 require (
-	github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.15
-	github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.17
+	github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0
+	github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0
 )
 
 require (

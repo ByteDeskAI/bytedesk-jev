@@ -2,6 +2,8 @@ github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.12 h1:usze
 github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.12/go.mod h1:wap8YH8CPDPQjIeshfFD6B3Hi8DDDV5bUbG5l47mONc=
 github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.15 h1:YAFCrthl0yNh49yplz5pkPMKdmzW9LyaQlSxaiTcpL4=
 github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0-rc.15/go.mod h1:Qa9Cit9KQUs45klbl8E0t6vosp4bUo4sD5dtixWGTpU=
+github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0 h1:wKjbtNLJ4gS3gnJkCmoyd0jxTEZbko8zF0ekcCuqa9I=
+github.com/ByteDeskAI/bytedesk-remote-gateway-plugin-sdk/v2 v2.0.0/go.mod h1:bH9I1nlm69s6keBGHSA2bB0nVuDo4qXKLvJ3g/cPbVc=
 github.com/ByteDeskAI/bytedesk-sdk-dependencies v0.4.0-rc.18 h1:D8qwlJR281Lm8hBShRm7kI1x4uHYHoWQzguNG4JibTM=
 github.com/ByteDeskAI/bytedesk-sdk-dependencies v0.4.0-rc.18/go.mod h1:MYucZhH3KqdTUXHOYPDMKisvNIEuz1jQyjo63GyJqVA=
 github.com/ByteDeskAI/bytedesk-sdk-dependencies v0.4.0-rc.21 h1:fGyoEhbPJtnOXmq1TaxcYK9hnOSb+5bfC5do/BCXstc=
@@ -10,6 +12,8 @@ github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.14 h1:ac940otz2PyW2
 github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.14/go.mod h1:lf6GGDTGcxXMON20M6JJUb/nLL72WQODNYgLDgJRdE4=
 github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.17 h1:Mng8gKIDaXmIjnPq+Yc5JOCWTg4tn0q3/pCrykDfVhg=
 github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0-rc.17/go.mod h1:lf6GGDTGcxXMON20M6JJUb/nLL72WQODNYgLDgJRdE4=
+github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0 h1:k9Idorcbgg2eK4kr11z9GGmrXccTz63pXsznA9KsC9M=
+github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2 v2.0.0/go.mod h1:lf6GGDTGcxXMON20M6JJUb/nLL72WQODNYgLDgJRdE4=
 github.com/Masterminds/semver/v3 v3.5.0 h1:kQceYJfbupGfZOKZQg0kou0DgAKhzDg2NZPAwZ/2OOE=
 github.com/Masterminds/semver/v3 v3.5.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/dlclark/regexp2 v1.11.0 h1:G/nrcoOa7ZXlpoa/91N3X7mM3r8eIlMBBJZvsz/mxKI=
