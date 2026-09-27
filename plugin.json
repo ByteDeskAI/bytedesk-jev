@@ -1,46 +1,224 @@
 {
-  "id": "example",
-  "version": "0.2.0-rc.3",
+  "contract": 2,
+  "kind": "process",
+  "id": "jev",
+  "version": "0.1.0",
+  "identity": {
+    "displayName": "Jev",
+    "description": "Reusable Choice, Score and Noul AI decisions with a host-held Typesafe key and an interactive playground."
+  },
   "nav": [
     {
-      "id": "example",
-      "label": "Example plugin",
-      "href": "/plugins/example",
+      "id": "jev",
+      "label": "Jev playground",
+      "href": "/plugins/jev",
       "order": 90
     }
   ],
   "panels": [
     {
-      "id": "example",
-      "kind": "example",
-      "url": "/example/ui",
-      "module": "/example/panel.mjs",
+      "id": "jev",
+      "kind": "jev",
+      "url": "/jev/ui",
+      "module": "/jev/panel.mjs",
       "documentPaths": [
-        "/example",
-        "/example/view/:item"
+        "/jev"
       ]
     }
   ],
   "scopes": [
-    "plugin:example"
+    "plugin:jev"
   ],
   "routes": [
-    "/example/"
+    "/jev/"
   ],
-  "spawn": true,
-  "binary": "example",
+  "binary": "jev",
   "socket": "plugin.sock",
   "targets": [
     "gateway"
   ],
-  "protocol": {
-    "major": 1,
-    "required": [
-      "host.scoped.v1",
-      "activation.check.v1",
-      "ui.document-paths.v1",
-      "ui.mount.v1"
+  "role": "extension",
+  "publisher": {
+    "id": "bytedesk",
+    "name": "ByteDesk"
+  },
+  "when": {
+    "os": [
+      "linux"
     ]
   },
-  "permissions": {}
+  "implements": [
+    {
+      "point": "ai.decision",
+      "id": "jev",
+      "priority": 100
+    },
+    {
+      "point": "host.settings.section",
+      "id": "jev",
+      "priority": 100
+    }
+  ],
+  "protocol": {
+    "major": 2,
+    "required": [
+      "http.routes.v1",
+      "ui.mount.v1",
+      "ui.document-paths.v1",
+      "host.workload-auth.v1",
+      "ai.decision.v1"
+    ],
+    "hooks": [
+      "activation.check"
+    ]
+  },
+  "permissions": {
+    "request": [
+      "cmd.gateway.provider-access.v1.credential",
+      "cmd.gateway.provider-access.v1.revoke",
+      "cmd.gateway.provider-access.v1.egress-start",
+      "cmd.gateway.provider-access.v1.egress-read",
+      "cmd.gateway.provider-access.v1.egress-cancel",
+      "cmd.gateway.payloads.v1.create",
+      "cmd.gateway.payloads.v1.append",
+      "cmd.gateway.payloads.v1.commit",
+      "cmd.gateway.payloads.v1.read",
+      "cmd.gateway.payloads.v1.revoke",
+      "cmd.gateway.settings.v1.read-owner",
+      "cmd.gateway.ai-decision.v1.start",
+      "cmd.gateway.ai-decision.v1.read",
+      "cmd.gateway.ai-decision.v1.cancel",
+      "cmd.gateway.ai-decision.v1.models",
+      "cmd.gateway.coding-sessions.v1.catalog",
+      "cmd.gateway.coding-sessions.v1.create",
+      "cmd.gateway.coding-sessions.v1.read",
+      "cmd.gateway.coding-sessions.v1.prompt",
+      "cmd.gateway.coding-sessions.v1.events",
+      "cmd.gateway.coding-sessions.v1.stop",
+      "cmd.gateway.coding-sessions.v1.end",
+      "cmd.gateway.coding-sessions.v1.complete",
+      "cmd.gateway.coding-sessions.v1.approve",
+      "cmd.gateway.coding-sessions.v1.open-surface",
+      "cmd.gateway.coding-sessions.v1.preview",
+      "cmd.gateway.coding-sessions.v1.preview-read",
+      "cmd.gateway.coding-sessions.v1.preview-cancel"
+    ]
+  },
+  "serves": [
+    {
+      "name": "svc.jev.ai.decision.v1.start",
+      "version": "1.0.0",
+      "endpoints": [
+        {
+          "name": "svc.jev.ai.decision.v1.start",
+          "subject": "svc.jev.ai.decision.v1.start",
+          "point": "ai.decision"
+        }
+      ]
+    },
+    {
+      "name": "svc.jev.ai.decision.v1.read",
+      "version": "1.0.0",
+      "endpoints": [
+        {
+          "name": "svc.jev.ai.decision.v1.read",
+          "subject": "svc.jev.ai.decision.v1.read",
+          "point": "ai.decision"
+        }
+      ]
+    },
+    {
+      "name": "svc.jev.ai.decision.v1.cancel",
+      "version": "1.0.0",
+      "endpoints": [
+        {
+          "name": "svc.jev.ai.decision.v1.cancel",
+          "subject": "svc.jev.ai.decision.v1.cancel",
+          "point": "ai.decision"
+        }
+      ]
+    },
+    {
+      "name": "svc.jev.ai.decision.v1.models",
+      "version": "1.0.0",
+      "endpoints": [
+        {
+          "name": "svc.jev.ai.decision.v1.models",
+          "subject": "svc.jev.ai.decision.v1.models",
+          "point": "ai.decision"
+        }
+      ]
+    },
+    {
+      "name": "svc.jev.host.settings.section.v1.validate",
+      "version": "1.0.0",
+      "endpoints": [
+        {
+          "name": "svc.jev.host.settings.section.v1.validate",
+          "subject": "svc.jev.host.settings.section.v1.validate",
+          "point": "host.settings.section"
+        }
+      ]
+    }
+  ],
+  "needs": [
+    "services"
+  ],
+  "capabilities": [
+    "credential.secret",
+    "egress.provider",
+    "process.supervised"
+  ],
+  "config": {
+    "sections": [
+      {
+        "id": "jev",
+        "title": "Jev",
+        "description": "One host-held API key. Jev configuration and usage limits apply to this Gateway.",
+        "fields": [
+          {
+            "key": "apiKey",
+            "kind": "secret",
+            "label": "Typesafe API key",
+            "description": "Write-only. Gateway stores and uses this key; Jev receives only a scoped handle."
+          },
+          {
+            "key": "model",
+            "kind": "enum",
+            "label": "Jev model",
+            "description": "Pin a version for repeatable decisions. Aliases also require Allow model aliases.",
+            "default": "jev-1.13.0",
+            "choices": [
+              "jev-1.13.0",
+              "jev-latest",
+              "jev-preview"
+            ]
+          },
+          {
+            "key": "allowAliases",
+            "kind": "bool",
+            "label": "Allow model aliases",
+            "description": "An alias can resolve to a different model after an upstream release.",
+            "default": "false"
+          },
+          {
+            "key": "requestsPerMinute",
+            "kind": "int",
+            "label": "Requests per minute per consumer",
+            "description": "Optional host admission limit, applied separately to each consumer plugin, not an aggregate Jev total. Unset means no additional local limit.",
+            "min": 1,
+            "nullable": true
+          },
+          {
+            "key": "dailyInputTokens",
+            "kind": "int",
+            "label": "Daily input tokens per consumer",
+            "description": "Optional host-accounted limit, applied separately to each consumer plugin. Unknown usage never counts as zero; bounded in-flight overshoot is possible.",
+            "min": 1,
+            "nullable": true
+          }
+        ]
+      }
+    ]
+  }
 }
