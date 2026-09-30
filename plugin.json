@@ -2,7 +2,7 @@
   "contract": 2,
   "kind": "process",
   "id": "jev",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "identity": {
     "displayName": "Jev",
     "description": "Reusable Choice, Score and Noul AI decisions with a host-held Typesafe key and an interactive playground."
@@ -32,6 +32,7 @@
   "routes": [
     "/jev/"
   ],
+  "spawn": true,
   "binary": "jev",
   "socket": "plugin.sock",
   "targets": [

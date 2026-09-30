@@ -18,7 +18,7 @@ import (
 	commonplugin "github.com/ByteDeskAI/bytedesk-sdk-dependencies/v2/plugin"
 )
 
-const Version = "0.1.0"
+const Version = "0.1.1"
 
 //go:embed panel.mjs
 var panelModule []byte
@@ -49,7 +49,7 @@ func serviceDeclaration(d commonplugin.Descriptor, point commonplugin.Point) com
 
 func (p *Plugin) Manifest() pluginsdk.Manifest {
 	return pluginsdk.Manifest{
-		Contract: pluginsdk.ProtocolMajor, Kind: pluginsdk.KindProcess, ID: p.ID(), Version: Version,
+		Contract: pluginsdk.ProtocolMajor, Kind: pluginsdk.KindProcess, Spawn: true, ID: p.ID(), Version: Version,
 		Identity:  &commonplugin.ManifestIdentity{DisplayName: "Jev", Description: "Reusable Choice, Score and Noul AI decisions with a host-held Typesafe key and an interactive playground."},
 		Publisher: &commonplugin.Publisher{ID: "bytedesk", Name: "ByteDesk"}, Targets: []string{pluginsdk.TargetGateway}, Role: pluginsdk.RoleExtension,
 		Binary: "jev", Socket: "plugin.sock", When: commonplugin.When{OS: []string{"linux"}}, Routes: []string{"/jev/"}, Scopes: []string{"plugin:jev"},
